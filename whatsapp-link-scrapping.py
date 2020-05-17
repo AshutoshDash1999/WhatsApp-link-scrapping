@@ -13,8 +13,16 @@ user.click()
 user_profile = user.find_element_by_xpath('//header[@class="_2y17h"]')
 user_profile.click()    # click on the profile
 
-user_media_menu = user_profile.find_element_by_xpath('//div[@class="_1ZiJ3"]')    # under construction
-user_media_menu.click()
+user_media_menu = user_profile.find_element_by_xpath('//span[contains(text(), "Media, Links and Docs")]')
+user_media_menu.click()  # click on the "Media,docs and links"
 
-link = user_media_menu.find_element_by_xpath('//button[@title="Links"]')    # under construction
-link.click()
+link_bar = user_media_menu.find_element_by_xpath('//button[@title="Links"]')    # click on "Links" tab
+link_bar.click()
+
+
+links = []
+elements = driver.find_elements_by_tag_name('a')
+for elem in elements:
+    href = elem.get_attribute('href')
+    links.append(href)
+print(links)
