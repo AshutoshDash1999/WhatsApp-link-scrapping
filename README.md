@@ -12,7 +12,7 @@ First install [Homebrew](https://brew.sh/) for Linux/Mac, then on terminal write
 
 Install [python](https://www.python.org/downloads/release), [selenium](https://selenium-python.readthedocs.io/installation.html)
 
-1. Run Script
+1. Run `whatsapp-link-scrapping.py`
 2. Scan QR code
 3. Wait for the browser to get to the `web.whatsapp.com`.
 4. Enter the person's name whose links you want to scrap.
