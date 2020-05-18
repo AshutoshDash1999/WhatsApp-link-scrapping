@@ -17,3 +17,9 @@ Install [python](https://www.python.org/downloads/release), [selenium](https://s
 3. Wait for the browser to get to the `web.whatsapp.com`.
 4. Enter the person's name whose links you want to scrap.
 5. Press `Enter`
+
+
+
+
+
+#python #selenium #webscrapping #whatsapp #whatsappscrapping #automation #opensource
