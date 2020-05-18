@@ -7,6 +7,8 @@ Make sure you have good internet connection.
 Install `geckodriver` for Firefox and `chromedriver` for Google Chrome.
 
 First install [Homebrew](https://brew.sh/) for Linux/Mac, then on terminal write `brew install geckodriver` / `brew install chromedriver`.
+[Install Chromedriver for Windows](https://chromedriver.chromium.org/downloads)
+[Install Geckodriver for Windows](https://stackoverflow.com/a/56926716/10846561)
 
 Install [python](https://www.python.org/downloads/release), [selenium](https://selenium-python.readthedocs.io/installation.html)
 
