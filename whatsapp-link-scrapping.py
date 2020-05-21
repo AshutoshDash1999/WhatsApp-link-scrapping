@@ -32,43 +32,45 @@ try:
     try:
         print("Scan the QR code then proceed.")
         time.sleep(10)
-        contact_name = input("Enter the contact/group name \nwhose data you want scrap: ")
+        
+        while True:
+            contact_name = input("Enter the contact/group name \nwhose data you want scrap: ")
 
-        try:
-            user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(contact_name))
-        except Exception as e:
-            search_box = driver.find_element_by_xpath('//div[@class="_2S1VP copyable-text selectable-text"]')
-            search_box = wdw(driver, 50).until(
-                lambda driver : search_box)
-            search_box.click()
-            search_box.send_keys(contact_name)
-            user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(contact_name))
-            user = wdw(driver, 50).until(lambda driver: user)
+            try:
+                user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(contact_name))
+            except Exception as e:
+                search_box = driver.find_element_by_xpath('//div[@class="_2S1VP copyable-text selectable-text"]')
+                search_box = wdw(driver, 50).until(
+                    lambda driver : search_box)
+                search_box.click()
+                search_box.send_keys(contact_name)
+                user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(contact_name))
+                user = wdw(driver, 50).until(lambda driver: user)
 
-        user.click()
-        user_profile = driver.find_element_by_xpath('//div[@class = "_5SiUq"][@role = "button"]')
-        user_profile.click()
+            user.click()
+            user_profile = driver.find_element_by_xpath('//div[@class = "_5SiUq"][@role = "button"]')
+            user_profile.click()
 
-        user_media_menu = user_profile.find_element_by_xpath('//span[contains(text(), "Media, Links and Docs")]')
-        user_media_menu.click()  # click on the "Media,docs and links"
+            user_media_menu = user_profile.find_element_by_xpath('//span[contains(text(), "Media, Links and Docs")]')
+            user_media_menu.click()  # click on the "Media,docs and links"
 
-        link_bar = user_media_menu.find_element_by_xpath('//button[@title="Links"]')
-        link_bar.click()  # click on "Links" tab
-        time.sleep(10)
+            link_bar = user_media_menu.find_element_by_xpath('//button[@title="Links"]')
+            link_bar.click()  # click on "Links" tab
+            time.sleep(10)
 
-        links = []  # coverting to set as we dont require repeated links
-        elements = driver.find_elements_by_tag_name('a')
-        for elem in elements:
-            href = elem.get_attribute('href')
-            links.append(href)
+            links = []  # coverting to set as we dont require repeated links
+            elements = driver.find_elements_by_tag_name('a')
+            for elem in elements:
+                href = elem.get_attribute('href')
+                links.append(href)
 
-        links = list(set(links))
-        # writing the links list to a file
-        with open("whatsapp_links.txt", 'w') as f:
-            for link in links:
-                f.write(link)
-                f.write('\n')
-        f.close()
+            links = list(set(links))
+            # writing the links list to a file
+            with open("whatsapp_links.txt", 'w') as f:
+                for link in links:
+                    f.write(link)
+                    f.write('\n')
+            f.close()
 
     except Exception as e:
         print(e)
