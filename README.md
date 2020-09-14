@@ -1,6 +1,6 @@
 # WhatsApp-link-scrapper
 
-This repo is for scrapping link from WhatsApp contact.
+This repo is for scrapping all links shared to WhatsApp contact.
 
 Make sure you have good internet connection.
 
