@@ -1,4 +1,4 @@
-# WhatsApp-link-scrapper
+# WhatsApp-link-scraper
 
 This repo is for scrapping all links shared to WhatsApp contact.
 
